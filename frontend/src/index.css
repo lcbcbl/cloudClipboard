@@ -1,0 +1,470 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #4b86c5 0%, #5ad1cd 50%, #9b59b6 100%);
+  min-height: 100vh;
+  color: white;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* 应用容器 */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 6px 10px;
+}
+
+/* 应用头部 */
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+  color: white;
+  padding: 16px 20px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: white;
+  letter-spacing: -0.02em;
+  background: none;
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: white;
+  background-clip: none;
+}
+
+.app-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 400;
+  color: white;
+  background: none;
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: white;
+  background-clip: none;
+  line-height: 1.4;
+}
+
+/* 应用内容 */
+.app-content {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 功能列 */
+.feature-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 100%;
+}
+
+/* 字符串剪切板列 */
+.feature-column-text {
+  flex: 1;
+  max-width: none;
+}
+
+/* 文件剪切板列 */
+.feature-column-file {
+  flex: 1.618;
+  max-width: none;
+}
+
+/* 功能卡片 */
+.feature-card {
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  min-height: 500px;
+}
+
+.feature-card:hover {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+  transition: all 0.2s ease;
+}
+
+/* 功能标题 */
+.feature-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+}
+
+.feature-icon {
+  color: #64748b;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+
+
+/* 上传区域 */
+.upload-section {
+  margin-bottom: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  transition: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* 上传框样式 */
+.upload-box {
+  border: 2px dashed #d0d5dd;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+  cursor: pointer;
+  width: 100% !important;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 确保Upload组件的容器也有正确的宽度 */
+.upload-section > div {
+  width: 85% !important;
+  margin: 0 auto !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* 确保Upload组件本身也有正确的宽度 */
+.ant-upload {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* 确保Upload组件的wrapper也有正确的宽度 */
+.ant-upload-wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+
+.upload-box:hover {
+  border-color: #4b86c5;
+  background-color: #f0f4f8;
+}
+
+.upload-box.dragover {
+  border-color: #4b86c5;
+  background-color: #e6f0f7;
+}
+
+/* 上传图标 */
+.upload-icon {
+  margin-bottom: 16px;
+}
+
+/* 上传文字 */
+.upload-text {
+  color: #344054;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.upload-section:hover {
+  border-color: transparent;
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.upload-section.dragover {
+  border-color: transparent;
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 项目列表 */
+.item-list {
+  margin-top: 16px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 200px;
+}
+
+/* 项目卡片 */
+.item-card {
+  margin-bottom: 1px;
+  padding: 4px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 0;
+  transition: all 0.1s ease;
+  background: white;
+  box-shadow: none;
+}
+
+.item-card:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e0;
+  transform: none;
+}
+
+/* 项目头部 */
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+/* 项目标题 */
+.item-title {
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* 项目元数据 */
+.item-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* 项目内容容器 */
+.item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 项目操作 */
+.item-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* 文本按钮样式优化 */
+.ant-btn-text {
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.ant-btn-text:hover {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+  border-color: transparent;
+}
+
+.ant-btn-text.ant-btn-danger:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* 文本内容 */
+.text-content {
+  background-color: transparent;
+  padding: 6px 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 150px;
+  overflow-y: auto;
+  border: none;
+  color: #1e293b;
+  background-color: transparent;
+  margin: 0;
+  flex: 1;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* 按钮样式优化 */
+.ant-btn {
+  border-radius: 0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.ant-btn-primary {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: none;
+}
+
+.ant-btn-primary:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.ant-btn-danger {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  box-shadow: none;
+}
+
+.ant-btn-danger:hover {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.ant-btn-default {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  box-shadow: none;
+}
+
+.ant-btn-default:hover {
+  background: #f8fafc;
+  border-color: #cbd5e0;
+  color: #334155;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* 输入框样式优化 */
+.ant-input, .ant-input-textarea {
+  border-radius: 0;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  background: white;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  resize: vertical;
+  color: #1e293b;
+}
+
+.ant-input:focus, .ant-input-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  transform: none;
+}
+
+/* 列表样式优化 */
+.ant-list {
+  background: transparent;
+}
+
+.ant-list-item {
+  border: none;
+  padding: 0;
+}
+
+/* 卡片样式优化 */
+.ant-card {
+  border-radius: 0;
+  border: 1px solid #e2e8f0;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #f1f5f9;
+  background: white;
+  padding: 24px 20px 16px 20px;
+}
+
+.ant-card-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 20px 8px 20px;
+  background: white;
+}
+
+/* 进度条样式优化 */
+.ant-progress {
+  margin-top: 16px;
+}
+
+.ant-progress-bar .ant-progress-bg {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 消息提示样式优化 */
+.ant-message {
+  top: 20px;
+}
+
+.ant-message .ant-message-notice-content {
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+}
+
+/* 标题样式优化 */
+.ant-typography h4 {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+/* 图标样式 */
+.anticon {
+  font-size: 1rem;
+}
