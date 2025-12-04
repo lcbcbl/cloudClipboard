@@ -28,7 +28,6 @@ pids
 
 # Local data directories
 data/*
-!data/
 uploads/*
-!uploads/
+
 
